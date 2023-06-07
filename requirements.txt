@@ -1,0 +1,9 @@
+tensorflow
+pandas
+matplotlib
+seaborn
+numpy
+scikit-learn
+PyYAML
+notebook
+-e .
