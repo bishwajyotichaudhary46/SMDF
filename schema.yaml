@@ -1,0 +1,11 @@
+COLUMNS:
+  M01AB: float64
+  M01AE: float64
+  N02BA: float64
+  N02BE: float64
+  N05B: float64
+  N05C: float64
+  R03: float64
+  R06: float64
+  datum: object
+
