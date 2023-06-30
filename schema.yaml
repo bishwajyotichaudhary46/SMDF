@@ -1,4 +1,4 @@
-COLUMNS:
+COLUMN:
   M01AB: float64
   M01AE: float64
   N02BA: float64
@@ -8,4 +8,17 @@ COLUMNS:
   R03: float64
   R06: float64
   datum: object
+
+trainer_column:
+  M01AB: M01AB
+  M01AE: M01AE
+  N02BA: N02BA
+  N02BE: N02BE
+  N05B: N05B
+  N05C: N05C
+  R03: R03
+  R06: R06
+  datum: datum
+
+
 

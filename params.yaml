@@ -1,1 +1,8 @@
-key: value
+hybrid:
+  filters: 256
+  kernel_size: 3
+  activation: relu
+  loss: mse
+  optimizer: adam
+  epoch: 15
+  batch_size: 100

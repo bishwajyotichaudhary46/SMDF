@@ -1,6 +1,6 @@
 from SMDF.constants import *
 from SMDF.utils.common import read_yaml,create_directories
-from SMDF.entity import (DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
+from SMDF.entity import (DataSplitingConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -60,3 +60,14 @@ class ConfigurationManager:
 
         return data_transformation_config
     
+    def get_data_spliting_config(self) -> DataSplitingConfig:
+        config = self.config.data_spliting
+
+        create_directories([config.root_dir])
+
+        data_spliting_config = DataSplitingConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+        )
+
+        return data_spliting_config
