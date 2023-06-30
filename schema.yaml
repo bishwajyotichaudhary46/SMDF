@@ -1,4 +1,4 @@
-COLUMN:
+COLUMNS:
   M01AB: float64
   M01AE: float64
   N02BA: float64

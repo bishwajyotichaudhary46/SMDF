@@ -1,6 +1,6 @@
 from SMDF.constants import *
 from SMDF.utils.common import read_yaml,create_directories
-from SMDF.entity import (DataSplitingConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
+from SMDF.entity import (ModelTrainerConfig,DataSplitingConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -71,3 +71,37 @@ class ConfigurationManager:
         )
 
         return data_spliting_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.params.hybrid
+        schema = self.schema.trainer_column
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            filters = params.filters,
+            kernel_size = params.kernel_size,
+            scaler = config.scaler,
+            activation = params.activation,
+            loss = params.loss,
+            optimizer = params.optimizer,
+            epoch=params.epoch,
+            batch_size=params.batch_size,
+            M01AB = config.M01AB,
+            M01AE = config.M01AE,
+            N02BA = config.N02BA,
+            N02BE = config.N02BE,
+            N05B = config.N05B,
+            N05C = config.N05C,
+            R03 = config.R03,
+            R06 = config.R06,
+            
+
+            
+        )
+
+        return model_trainer_config
