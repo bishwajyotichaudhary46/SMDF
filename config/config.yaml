@@ -34,6 +34,21 @@ model_trainer:
   R06: artifacts/model_trainer/R06
   
 
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  train_data_path: artifacts/data_spliting/train.csv
+  test_data_path: artifacts/data_spliting/test.csv
+  M01AB: artifacts/model_trainer/M01AB
+  M01AE: artifacts/model_trainer/M01AE
+  N02BA: artifacts/model_trainer/N02BA
+  N02BE: artifacts/model_trainer/N02BE
+  N05B: artifacts/model_trainer/N05B
+  N05C: artifacts/model_trainer/N05C
+  R03: artifacts/model_trainer/R03
+  R06: artifacts/model_trainer/R06
+  scaler: artifacts/model_triner/scaler.joblib
+  
+
 
 
   
