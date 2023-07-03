@@ -46,4 +46,22 @@ class ModelTrainerConfig:
     N05C: Path
     R03: Path
     R06: Path
-    
+
+
+
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    M01AB: Path
+    M01AE: Path
+    N02BA: Path
+    N02BE: Path
+    N05B: Path
+    N05C: Path
+    R03: Path
+    R06: Path
+    scaler: Path
+     

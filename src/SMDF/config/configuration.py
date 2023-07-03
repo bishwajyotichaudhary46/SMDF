@@ -1,6 +1,6 @@
 from SMDF.constants import *
 from SMDF.utils.common import read_yaml,create_directories
-from SMDF.entity import (ModelTrainerConfig,DataSplitingConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
+from SMDF.entity import (ModelEvaluationConfig,ModelTrainerConfig,DataSplitingConfig,DataIngestionConfig,DataValidationConfig,DataTransformationConfig)
 
 class ConfigurationManager:
     def __init__(
@@ -105,3 +105,28 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+
+        create_directories([config.root_dir])
+
+        model_eval_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            train_data_path = config.train_data_path,
+            test_data_path = config.test_data_path,
+            M01AB = config.M01AB,
+            M01AE = config.M01AE,
+            N02BA = config.N02BA,
+            N02BE = config.N02BE,
+            N05B = config.N05B,
+            N05C = config.N05C,
+            R03 = config.R03,
+            R06 = config.R06,
+            scaler = config.scaler,
+            
+
+            
+        )
+
+        return model_eval_config
