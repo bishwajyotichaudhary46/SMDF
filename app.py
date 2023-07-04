@@ -5,10 +5,11 @@ import numpy as np
 import pandas as pd
 from SMDF.pipeline.forecasting import ForecastingPipeline
 from SMDF.logging import logger
+from flask_cors import CORS
 
 
 app = Flask(__name__) # initializing a flask app
-
+CORS(app)
 
 
 @app.route('/train',methods=['GET'])  # route to train the pipeline
@@ -33,7 +34,7 @@ def index():
 
 
 
-            return jsonify(forecast = forecast)
+            return jsonify(forecast)
         
 
         except Exception as e:
