@@ -6,21 +6,33 @@ import pandas as pd
 from SMDF.pipeline.forecasting import ForecastingPipeline
 from SMDF.logging import logger
 from flask_cors import CORS
+from fetch_data_model import fetch_data_model
+import datetime
+from retrain import Retrain
 
 
+#Fetching Data From DataBase
+obj = fetch_data_model()
+# For Retraining Model
+retrain = Retrain()
+retrain.train_check()
 
+"""
+if today == da
+    
+"""
 app = Flask(__name__) # initializing a flask app
 CORS(app)
 
 @app.route("/fetch")
-def fetch():
-    return "fetching"
+def fetch_data():
+    return obj.get_data_all()
 
-@app.route('/train',methods=['GET'])  # route to train the pipeline
-def training():
+
+@app.route("/retrain",methods=['GET'])
+def train():
     os.system("python main.py")
-    return "Training Successful!" 
-
+    return "Retraining Successful!"
 
 @app.route('/forecast',methods=['POST','GET']) # route to show the predictions in a web UI
 def index():
@@ -47,6 +59,7 @@ def index():
         except Exception as e:
             print('The Exception message is: ',e)
             return 'something is wrong'
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port=4000,debug=True)

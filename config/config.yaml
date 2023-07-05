@@ -14,6 +14,7 @@ data_validation:
 data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/salesDaily.csv
+  sales_data: artifacts/database_data/sales.csv
 
 data_spliting:
   root_dir: artifacts/data_spliting
@@ -48,6 +49,7 @@ model_evaluation:
   R06: artifacts/model_trainer/R06
   scaler: artifacts/model_triner/scaler.joblib
   
+
 
 
 
