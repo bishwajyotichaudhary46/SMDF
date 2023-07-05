@@ -19,6 +19,7 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     data_path: Path
+    sales_data: Path
 
 @dataclass(frozen=True)
 class DataSplitingConfig:

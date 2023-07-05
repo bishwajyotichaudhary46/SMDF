@@ -40,10 +40,10 @@ def index():
         try:
             
             obj = ForecastingPipeline()
-            #period = request.json["period"]
-            #period = int(period)
-            #logger.info(period)
-            forecast = obj.forecasting(period = 6)
+            period = request.json["period"]
+            period = int(period)
+            logger.info(period)
+            forecast = obj.forecasting(period = period)
             
             logger.info(type(forecast))
             json_str = json.dumps(forecast)
