@@ -8,9 +8,13 @@ from SMDF.logging import logger
 from flask_cors import CORS
 
 
+
 app = Flask(__name__) # initializing a flask app
 CORS(app)
 
+@app.route("/fetch")
+def fetch():
+    return "fetching"
 
 @app.route('/train',methods=['GET'])  # route to train the pipeline
 def training():
@@ -24,10 +28,13 @@ def index():
         try:
             
             obj = ForecastingPipeline()
-            forecast = obj.forecasting()
+            #period = request.json["period"]
+            #period = int(period)
+            #logger.info(period)
+            forecast = obj.forecasting(period = 6)
             
             logger.info(type(forecast))
-            #json_str = json.dumps(forecast)
+            json_str = json.dumps(forecast)
 
             
 
