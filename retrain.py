@@ -12,7 +12,7 @@ class Retrain:
         
 
         # Add 7 days to the current date
-        new_date = self.current_date + timedelta(days=7)
+        new_date = self.current_date + timedelta(days=1)
         df = pd.DataFrame({"Date":[new_date]})
         df.to_csv("artifacts/retrain/my_date.csv",index=False)
 
